@@ -1,0 +1,54 @@
+.minHeight {
+  min-height: 100vh;
+  background: #2d3a4b;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .form__Lay {
+    width: 4rem;
+    text-align: left;
+  }
+}
+
+h2 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.btnPrimaryCss {
+  margin-top: 0.2rem;
+  width: 100%;
+  padding: 0.1rem 0.2rem;
+  text-align: center;
+  font-size: 0.14rem;
+  background: #1890ff;
+  border-radius: 0.08rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  &:before {
+    content: '';
+    display: block;
+    background: linear-gradient(
+      to left,
+      rgba(72, 163, 255, 0) 50%,
+      rgba(72, 163, 255, 0.4) 50%
+    );
+    background-size: 210% 100%;
+    background-position: right bottom;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    transition: all 0.618s;
+    -webkit-transition: all 0.618s;
+  }
+  &:hover:before {
+    background-position: left bottom;
+  }
+}
