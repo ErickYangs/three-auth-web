@@ -1,0 +1,16 @@
+.homeLayout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  .leftNavLay {
+    width: 2rem;
+    min-height: inherit;
+    background: rgba(209, 93, 73, 0.2);
+  }
+  .rightContentLay {
+    flex: 1;
+    min-height: inherit;
+  }
+}

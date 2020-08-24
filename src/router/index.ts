@@ -1,28 +1,36 @@
-import AccountLay from '../view/AccountLay/index'
-import HomeLay from '../view/HomeLay/index'
-import ErrorPage from '../view/ErrorPage/index'
+/*
+ * @Description: Onchain Project
+ * @Version: 1.0.0
+ * @Author: EricYangc
+ */
 
+import {
+    HomeOutlined,
+    SettingFilled,
+    ShopOutlined
+} from '@ant-design/icons';
 
 interface routerConfigModel {
     path: string,
-    component?: any,
-    auth?: boolean
+    name: string,
+    icon?: any
 }
 
 export const routerConfig: routerConfigModel[] = [
     {
         path: '/',
-        component: HomeLay,
-        auth: true
+        name: 'Home',
+        icon: HomeOutlined
     },
     {
-        path: '/login',
-        component: AccountLay,
-        auth: false
+        path: '/market',
+        name: 'Market',
+        icon: ShopOutlined
     },
     {
-        path: '/404',
-        component: ErrorPage,
-        auth: false
-    }
+        path: '/setting',
+        name: 'Setting',
+        icon: SettingFilled
+    },
 ]
+//

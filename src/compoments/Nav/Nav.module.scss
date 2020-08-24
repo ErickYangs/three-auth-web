@@ -1,0 +1,26 @@
+.itemLink {
+  display: block;
+  padding: 0.2rem 0.2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: #1890ff;
+  span {
+    color: #1890ff;
+    margin-left: 0.2rem;
+  }
+  &:hover {
+    background: #000;
+    color: #fff;
+    span {
+      color: #fff;
+    }
+  }
+}
+.itemLink.active {
+  background: #000;
+  color: #fff;
+  span {
+    color: #fff;
+  }
+}
