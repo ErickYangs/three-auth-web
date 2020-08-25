@@ -13,24 +13,34 @@ import {
 interface routerConfigModel {
     path: string,
     name: string,
-    icon?: any
+    icon?: any,
+    state?: Object
 }
 
 export const routerConfig: routerConfigModel[] = [
     {
         path: '/',
         name: 'Home',
-        icon: HomeOutlined
+        icon: HomeOutlined,
+        state: {
+            currentTab: 'Home'
+        }
     },
     {
         path: '/market',
         name: 'Market',
-        icon: ShopOutlined
+        icon: ShopOutlined,
+        state: {
+            currentTab: 'Market'
+        }
     },
     {
         path: '/setting',
         name: 'Setting',
-        icon: SettingFilled
+        icon: SettingFilled,
+        state: {
+            currentTab: 'Setting'
+        }
     },
 ]
 //

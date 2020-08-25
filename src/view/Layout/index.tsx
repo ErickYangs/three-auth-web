@@ -27,12 +27,9 @@ const Layout: React.FC<Props> = ({ ont }) => {
             key={Routes.Home}
             exact
           ></Route>
-          <Route
-            exact
-            path={Routes.Market}
-            component={MarketLay}
-            key={Routes.Market}
-          ></Route>
+          <Route exact path={Routes.Market} key={Routes.Market}>
+            <MarketLay />
+          </Route>
           <Route
             exact
             path={Routes.MarketProduct}
@@ -45,7 +42,6 @@ const Layout: React.FC<Props> = ({ ont }) => {
             key={Routes.Setting}
             exact
           ></Route>
-          {/* MarketProduct */}
           <Redirect from="/" to={Routes.Home} />
         </Switch>
       </div>
