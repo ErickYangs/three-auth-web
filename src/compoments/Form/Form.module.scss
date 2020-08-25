@@ -1,0 +1,13 @@
+.fromLay {
+  text-align: left;
+}
+#subForm {
+  text-align: left;
+  .ant-form-item {
+    .ant-form-item-label {
+      label {
+        color: red;
+      }
+    }
+  }
+}

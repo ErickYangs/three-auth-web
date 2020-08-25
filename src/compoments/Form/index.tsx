@@ -3,18 +3,20 @@ import { Form, Input, Button, Space, Select, Row, Col } from 'antd'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
 
 import { FormLayoutType } from '../../type/tools'
+import styles from './Form.module.scss'
 
 const FormLay: React.FC = () => {
   const onFinish = (values: any) => {
     console.log('Received values of form:', values)
   }
   return (
-    <div>
+    <div className={styles.fromLay}>
       <Form
         layout={FormLayoutType.Vertical}
         name="dynamic_form_nest_item"
         onFinish={onFinish}
         autoComplete="off"
+        id="subForm"
       >
         {/* title */}
         <Form.Item
@@ -65,13 +67,16 @@ const FormLay: React.FC = () => {
           name="requestType"
           rules={[{ required: true, message: 'Miss Request Method' }]}
         >
-          <Select placeholder="Select Request Method">
+          <Select
+            dropdownClassName="primarySelectCss"
+            placeholder="Select Request Method"
+          >
             <Select.Option value="GET">GET</Select.Option>
             <Select.Option value="POST">POST</Select.Option>
           </Select>
         </Form.Item>
         <div>
-          <div>Encryption parameters</div>
+          <div className={'cusPrimaryLabelCss'}>Encryption parameters</div>
           <div>
             <Form.List name="cryptoInfos">
               {(fields, { add, remove }) => {
@@ -103,7 +108,10 @@ const FormLay: React.FC = () => {
                               }
                             ]}
                           >
-                            <Select placeholder="Select Encryption Location">
+                            <Select
+                              dropdownClassName="primarySelectCss"
+                              placeholder="Select Encryption Location"
+                            >
                               <Select.Option value={1}>Body</Select.Option>
                               <Select.Option value={2}>Header</Select.Option>
                             </Select>
@@ -121,7 +129,10 @@ const FormLay: React.FC = () => {
                               }
                             ]}
                           >
-                            <Select placeholder="Select Encryption Location">
+                            <Select
+                              dropdownClassName="primarySelectCss"
+                              placeholder="Select Encryption Location"
+                            >
                               <Select.Option value={1}>MD5</Select.Option>
                             </Select>
                           </Form.Item>
@@ -171,7 +182,9 @@ const FormLay: React.FC = () => {
         </div>
 
         <div>
-          <div>Request parameter description</div>
+          <div className={'cusPrimaryLabelCss'}>
+            Request parameter description
+          </div>
           <div>
             <Form.List name="params">
               {(fields, { add, remove }) => {
@@ -221,7 +234,10 @@ const FormLay: React.FC = () => {
                               }
                             ]}
                           >
-                            <Select placeholder="Select Type">
+                            <Select
+                              dropdownClassName="primarySelectCss"
+                              placeholder="Select Type"
+                            >
                               <Select.Option value={1}>
                                 Path parameter
                               </Select.Option>
@@ -249,7 +265,10 @@ const FormLay: React.FC = () => {
                               }
                             ]}
                           >
-                            <Select placeholder="Select fixed">
+                            <Select
+                              dropdownClassName="primarySelectCss"
+                              placeholder="Select fixed"
+                            >
                               <Select.Option value={1}>True</Select.Option>
                               <Select.Option value={0}>False</Select.Option>
                             </Select>
