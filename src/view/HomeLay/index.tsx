@@ -1,7 +1,12 @@
 import React from 'react'
 
+import FormLay from '../../compoments/Form/index'
 const HomeLay: React.FC = () => {
-  return <div>HomeLay111</div>
+  return (
+    <div>
+      <FormLay />
+    </div>
+  )
 }
 
 export default HomeLay
