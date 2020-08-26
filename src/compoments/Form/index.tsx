@@ -1,13 +1,27 @@
-import React from 'react'
-import { Form, Input, Button, Space, Select, Row, Col } from 'antd'
+import React, { useState } from 'react'
+import { Form, Input, Button, Select, Row, Col } from 'antd'
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons'
-
+// import ReactJsonEditor from 'jsoneditor-for-react'
 import { FormLayoutType } from '../../type/tools'
 import styles from './Form.module.scss'
+// import { JsonEditor as Editor } from 'jsoneditor-react'
+// import 'jsoneditor-react/es/editor.min.css'
+// import 'brace'
+// import 'brace/mode/json'
+// import 'brace/theme/github'
+// import JsonEdit from 'react-jsoneditor'
+import JSONInput from 'react-json-editor-ajrm'
+import locale from 'react-json-editor-ajrm/locale/en'
 
 const FormLay: React.FC = () => {
+  const [jsonData, setJsonData] = useState({})
   const onFinish = (values: any) => {
     console.log('Received values of form:', values)
+    console.log('Received values of form:', jsonData)
+  }
+  const editorChangeHandler = (values: any) => {
+    console.log('new values', values)
+    setJsonData(values.jsObject)
   }
   return (
     <div className={styles.fromLay}>
@@ -316,6 +330,46 @@ const FormLay: React.FC = () => {
               }}
             </Form.List>
           </div>
+        </div>
+        <div>
+          {/* <ReactJsonEditor
+            values={jsonData}
+            onChange={(values: any) => {
+              editorChangeHandler(values)
+            }}
+          /> */}
+          {/* <Editor
+            value={jsonData}
+            onChange={(values: any) => {
+              editorChangeHandler(values)
+            }}
+            options={{
+              mode: 'code'
+            }}
+          /> */}
+          {/* <Editor
+            value={jsonData}
+            onChange={(values: any) => {
+              editorChangeHandler(values)
+            }}
+            theme="ace/theme/github"
+          /> */}
+          {/* <JsonEdit
+            json={jsonData}
+            changeVal={(values: any) => {
+              editorChangeHandler(values)
+            }}
+          /> */}
+          <JSONInput
+            id="a_unique_id"
+            placeholder={{}}
+            locale={locale}
+            height="550px"
+            width="100%"
+            onChange={(value: any) => {
+              editorChangeHandler(value)
+            }}
+          />
         </div>
         <Form.Item>
           <Button type="primary" htmlType="submit">
